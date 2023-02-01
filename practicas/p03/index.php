@@ -105,7 +105,28 @@
     $z[0] = "MySQL";
     print_r ($z);
     echo '<br>';
-    ?>   
+    ?>
+    
+    <h2>Inciso 4</h2>
+    <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de <br>
+    la matriz $GLOBALS o del modificador global de PHP.</p>
+    <?php
+    global $a, $b, $c, $z;
+    echo 'Valor de $a: '.$a.'<br>';
+    echo 'Valor de $b: '.$b.'<br>';
+    echo 'Valor de $c: '.$c.'<br>';
+    echo 'Valor de $z: ';
+    print_r ($z);
+    echo '<br>';
+
+
+    ?>
+
+
+
+
+
+
 
 
 </body>
