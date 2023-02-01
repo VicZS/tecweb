@@ -42,6 +42,7 @@
     </p>
 
    <?php
+   
    $a = "ManejadorSQL";
    $b = 'MySQL';
    $c = &$a;
@@ -71,9 +72,40 @@
     asignaciones <br> <br>';
 
     echo '$b y $c tienen el mismo valor que $a, ya que estos estan asignados por referencia a la variable $a';
-
-
+    
    ?>
+
+    <h2>Inciso 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, <br>
+    verificar la evolución del tipo de estas variables (imprime todos los componentes de los <br>
+    arreglo): <br></p>
+
+    <?php
+    
+    $a = "PHP5";
+    echo 'Valor de $a: '.$a.'<br>';
+
+    $z[] = &$a;
+    echo 'Valor de $z: ';
+    print_r ($z);
+    echo '<br>';
+
+    $b = "5a version de PHP";
+    echo 'Valor de $b: '.$b.'<br>';
+
+    $c = $b*10;
+    echo 'Valor de $c: '.$c. '<br>';
+
+    $a .= $b;
+    echo 'Valor de $a: '.$a.'<br>';
+
+    $b *= $c;
+    echo 'Valor de $b: '.$b.'<br>';
+
+    $z[0] = "MySQL";
+    print_r ($z);
+    echo '<br>';
+    ?>   
 
 
 </body>
