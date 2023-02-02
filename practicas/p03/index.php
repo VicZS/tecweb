@@ -72,7 +72,7 @@
     asignaciones <br> <br>';
 
     echo '$b y $c tienen el mismo valor que $a, ya que estos estan asignados por referencia a la variable $a';
-    
+    unset($a,$b,$c);
    ?>
 
     <h2>Inciso 3</h2>
@@ -93,7 +93,7 @@
     $b = "5a version de PHP";
     echo 'Valor de $b: '.$b.'<br>';
 
-    $c = $b*10;
+    @$c = $b*10;
     echo 'Valor de $c: '.$c. '<br>';
 
     $a .= $b;
@@ -111,12 +111,17 @@
     <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de <br>
     la matriz $GLOBALS o del modificador global de PHP.</p>
     <?php
-    global $a, $b, $c, $z;
+    function prueba(){
+        global $a, $b, $c, $z;
     echo 'Valor de $a: '.$a.'<br>';
     echo 'Valor de $b: '.$b.'<br>';
     echo 'Valor de $c: '.$c.'<br>';
     echo 'Valor de $z: ';
     print_r ($z);
+    }
+    
+prueba();
+
     echo '<br>';
     ?>
 
@@ -175,7 +180,7 @@
     echo 'Valor de $a: '.$a.'<br>';
     echo 'Valor de $b: '.$b.'<br>';
     settype($c, "integer");
-    echo ' Valor de $c: '.$c.'<br>';
+    echo ' Valor de $c: '.strval($c).'<br>';
     echo 'Valor de $d: '.$d;
     settype($e, "integer");
     echo '<br> Valor de $e: '.$e.'<br>';
