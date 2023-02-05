@@ -1,0 +1,118 @@
+.logo{
+    position: static;
+    width:10vw;
+    height:10vw;
+}
+
+
+.buscar{
+    position: absolute;
+    padding: 30px;
+    top: 5%;
+    right: 50vw;
+}
+
+.buscar input{
+    width: 200%;
+    height: 100 px;
+    padding: 0 40px;
+    font-size: 30px;
+    color: black;
+    outline: none;
+    border: 2px solid silver;
+    border-radius: 30px;
+}
+
+.buscar img{
+    position: absolute;
+    padding: 2px;
+    margin-left: 6px;
+    width: 33px;
+    height: 33px;
+}
+
+.iconou{
+    position: absolute;
+    padding: 30px;
+    top: 1%;
+    right: 5vw;
+    width: 33px;
+    height: 33px;
+}
+
+.iconoc{
+    position: absolute;
+    padding: 30px;
+    top: 8%;
+    right: 5vw;
+    width: 33px;
+    height: 33px;
+}
+
+.nav{
+    padding: 0 40px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+}
+
+.nav_ms{
+    position: fixed;
+    left: 2%;
+    bottom: 70%;
+    top: 170px;
+    right: 74%;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 30px;
+    background-color: black;
+    display: inline-block;
+    place-items: left;
+    clip-path: circle(0% at top left);
+    transition: clip-path .4s;
+}
+
+.nav_m{
+    text-decoration: none;
+    color: white;
+}
+
+.nav_ms:target{
+    clip-path: circle(150% at top left);
+}
+
+.nav img{
+    width: 1.5vw;
+    height: 1.2vw;
+    padding-bottom: 1vw;
+}
+
+
+table{
+    width: 100%;
+    margin-top: 2%;
+    font-size: 1.3vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.img1{
+    width: 15vw;
+    height: 15vw;
+}
+
+.img2{
+    width: 19vw;
+    height: 15vw;
+}
+
+.nombre{
+    text-align: center;
+ }
+
+.precios{
+   text-align: right;
+   color: red;
+}
