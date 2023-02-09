@@ -30,7 +30,22 @@
     echo Inciso2();
     ?>
 
+    <h3>Inciso 3</h3>
+    <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
+    pero que además sea múltiplo de un número dado.</p>
     
+    <?php
+    if(!empty($_GET['numero2'])){
+        $numero2 = $_GET['numero2'];
+        echo Inciso3($numero2);
+    }
+    else{
+        echo '(vacio)';
+    }
+    ?>
+
+    
+
 
 </body>
 </html>

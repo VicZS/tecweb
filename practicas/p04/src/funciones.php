@@ -53,5 +53,13 @@ function Inciso2(){
         echo "$num numeros obtenidos de $contador iteraciones";
 }
 
+function Inciso3($numero2){
+    do{
+        $aux = rand(0,100);
+        $aux2 = fmod($numero2, $aux);
+    }while($aux2 != 0);
+    return "Respuesta: $aux";
+}
+
 
 ?>
