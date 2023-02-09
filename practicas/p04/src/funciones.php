@@ -61,5 +61,17 @@ function Inciso3($numero2){
     return "Respuesta: $aux";
 }
 
+function Inciso4(){
+
+    for($i = 97; $i < 123; $i++){
+        $arreglo4 = array($i, chr($i));
+        foreach($arreglo4 as $numero => $letra){
+            echo "[$letra] ";
+        }
+        echo "<br>";
+    }             
+}
+
+
 
 ?>
