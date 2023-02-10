@@ -90,6 +90,58 @@
         </p>
         </form>
 
+        <h3>Inciso 6</h3>
+        <p>
+        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de <br>
+        una ciudad. Cada vehículo debe ser identificado por: <br>
+         Matricula <br>
+         Auto <br>
+        o Marca <br>
+        o Modelo (año) <br>
+        o Tipo (sedan|hachback|camioneta) <br>
+         Propietario <br>
+        o Nombre <br>
+        o Ciudad <br>
+        o Dirección <br> <br>
+
+        La matrícula debe tener el siguiente formato LLLNNNN, donde las L pueden ser letras de <br>
+        la A-Z y las N pueden ser números de 0-9. <br> 
+        Para hacer esto toma en cuenta las siguientes instrucciones: <br>
+         Crea en código duro el registro para 15 autos <br> 
+         Utiliza un único arreglo, cuya clave de cada registro sea la matricula <br>
+         Lógicamente la matricula no se puede repetir. <br> 
+         Los datos del Auto deben ir dentro de un arreglo. <br> 
+         Los datos del Propietario deben ir dentro de un arreglo. <br><br>
+
+        Usa print_r para mostrar la estructura general del arreglo,
+        </p>
+
+        <form id="formulario2" action="src/formulario2.php" method="post">
+            <fieldset>
+                <ol>
+                <li>Matricula: <select name="matricula">
+                    <option >AAA1111</option>
+                    <option >AAA2222</option>
+                    <option >AAA3333</option>
+                    <option >BBB1111</option>
+                    <option >BBB2222</option>
+                    <option >BBB3333</option>
+                    <option >CCC1111</option>
+                    <option >CCC2222</option>
+                    <option >CCC3333</option>
+                    <option >DDD1111</option>
+                    <option >DDD2222</option>
+                    <option >DDD3333</option>
+                    <option >EEE1111</option>
+                    <option >EEE2222</option>
+                    <option >EEE3333</option>
+                </select><br>
+                </ol>
+            </fieldset>
+            <p>
+            <input type="submit" value = "Consultar">
+            </p>
+            </form>
         
 
 
