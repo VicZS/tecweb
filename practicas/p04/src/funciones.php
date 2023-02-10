@@ -57,6 +57,7 @@ function Inciso3($numero2){
     do{
         $aux = rand(0,100);
         $aux2 = fmod($numero2, $aux);
+        echo "$aux<br>";
     }while($aux2 != 0);
     return "Respuesta: $aux";
 }
@@ -71,7 +72,6 @@ function Inciso4(){
         echo "<br>";
     }             
 }
-
 
 
 ?>

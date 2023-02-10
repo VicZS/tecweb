@@ -9,7 +9,7 @@
     require_once __DIR__.'/src/funciones.php';
     ?>
 
-    <h2>Inciso 1</h2>
+    <h3>Inciso 1</h3>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7.</p>
 
     <?php
@@ -22,7 +22,7 @@
     }
     ?>
 
-    <h2>Inciso 2</h2>
+    <h3>Inciso 2</h3>
     <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
     secuencia compuesta por: impar, par, impar</p>
 
@@ -54,6 +54,45 @@
     <?php
     echo Inciso4();
     ?>
+
+    <h3>Inciso 5</h3>
+
+    <p>
+        Usar las variables <strong>$edad</strong> y <strong>$sexo</strong> en una instrucción if para identificar una persona de sexo "femenino", 
+        cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de bienvenida apropiado. Por ejemplo:
+        </p>
+        <p>
+            <em>Bienvenida, usted está en el rango de edad permitido.</em>
+        </p>
+        <p>
+            En caso contrario, deberá devolverse otro mensaje indicando el error.
+        </p>
+        <ul>
+            <li>Los valores para $edad y $sexo se deben obtener por medio de un formulario en HTML.</li>
+            <li>Utilizar el la Variable Superglobal $_POST (revisar documentación).</li>
+        </ul>
+        <p>
+            R:
+        </p>
+        <form id="formulario1" action="src/formulario1.php" method="post">
+        <fieldset>
+            <legend>Información Personal</legend>
+            <ol>
+            <li><label>Edad:</label> <input type="text" name="edad"></li>
+            <li><label>Sexo:</label> <select name="sexo">
+                <option>Hombre </option>
+                <option>Mujer </option>
+            </select>
+            </ol>
+        </fieldset>
+        <p>
+            <input type="submit" value="¡OK!">
+        </p>
+        </form>
+
+        
+
+
     
 
 
