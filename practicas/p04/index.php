@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN”
-“http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Practica 4</title>
 </head>
@@ -78,40 +77,40 @@
         <fieldset>
             <legend>Información Personal</legend>
             <ol>
-            <li><label>Edad:</label> <input type="text" name="edad"></li>
-            <li><label>Sexo:</label> <select name="sexo">
+            <li><label>Edad:</label><input type="text" name="edad"/></li>
+            <li><label>Sexo:</label><select name="sexo">
                 <option>Hombre </option>
                 <option>Mujer </option>
-            </select>
+            </select></li>
             </ol>
         </fieldset>
         <p>
-            <input type="submit" value="¡OK!">
+            <input type="submit" value="¡OK!"/>
         </p>
         </form>
 
         <h3>Inciso 6</h3>
         <p>
-        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de <br>
-        una ciudad. Cada vehículo debe ser identificado por: <br>
-         Matricula <br>
-         Auto <br>
-        o Marca <br>
-        o Modelo (año) <br>
-        o Tipo (sedan|hachback|camioneta) <br>
-         Propietario <br>
-        o Nombre <br>
-        o Ciudad <br>
-        o Dirección <br> <br>
+        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de <br/>
+        una ciudad. Cada vehículo debe ser identificado por: <br/>
+         Matricula <br/>
+         Auto <br/>
+        o Marca <br/>
+        o Modelo (año) <br/>
+        o Tipo (sedan|hachback|camioneta) <br/>
+         Propietario <br/>
+        o Nombre <br/>
+        o Ciudad <br/>
+        o Dirección <br/> <br/>
 
-        La matrícula debe tener el siguiente formato LLLNNNN, donde las L pueden ser letras de <br>
-        la A-Z y las N pueden ser números de 0-9. <br> 
-        Para hacer esto toma en cuenta las siguientes instrucciones: <br>
-         Crea en código duro el registro para 15 autos <br> 
-         Utiliza un único arreglo, cuya clave de cada registro sea la matricula <br>
-         Lógicamente la matricula no se puede repetir. <br> 
-         Los datos del Auto deben ir dentro de un arreglo. <br> 
-         Los datos del Propietario deben ir dentro de un arreglo. <br><br>
+        La matrícula debe tener el siguiente formato LLLNNNN, donde las L pueden ser letras de <br/>
+        la A-Z y las N pueden ser números de 0-9. <br/> 
+        Para hacer esto toma en cuenta las siguientes instrucciones: <br/>
+         Crea en código duro el registro para 15 autos <br/> 
+         Utiliza un único arreglo, cuya clave de cada registro sea la matricula <br/>
+         Lógicamente la matricula no se puede repetir. <br/> 
+         Los datos del Auto deben ir dentro de un arreglo. <br/> 
+         Los datos del Propietario deben ir dentro de un arreglo. <br/><br/>
 
         Usa print_r para mostrar la estructura general del arreglo,
         </p>
@@ -135,18 +134,17 @@
                     <option >EEE1111</option>
                     <option >EEE2222</option>
                     <option >EEE3333</option>
-                </select><br>
+                </select><br/></li>
                 </ol>
             </fieldset>
             <p>
-            <input type="submit" value = "Consultar">
+            <input type="submit" value = "Consultar"/>
             </p>
             </form>
-        
 
-
-    
-
-
+            <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="XHTML 1.1 válido" height="31" width="88" /></a>
+    </p>
 </body>
 </html>
