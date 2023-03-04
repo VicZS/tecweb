@@ -1,12 +1,18 @@
 <?php
-$nombre = 'nombre_producto';
-$marca  = 'marca_producto';
-$modelo = 'modelo_producto';
-$precio = 1.0;
-$detalles = 'detalles_producto';
-$unidades = 1;
-$imagen   = 'img/imagen.png';
+$nombre = $_POST['nombre'];
+$marca  = $_POST['marca']; 
+$modelo = $_POST['modelo'];
+$precio = $_POST['precio'];
+settype($precio,"double");
+
+$detalles = $_POST['detalles'];
+$unidades = $_POST['unidades'];
+settype($unidades,"int");
+
+$imagen   = $_POST['imagen'];
 $eliminado = 0;
+
+echo $nombre;
 
 /** SE CREA EL OBJETO DE CONEXION */
 @$link = new mysqli('localhost', 'root', 'hola', 'marketzone');	
@@ -30,4 +36,8 @@ else
 }
 
 $link->close();
+
+header("Location: http://localhost:8080/tecweb/practicas/p06/productoregistrado.php");
+exit();
+
 ?>

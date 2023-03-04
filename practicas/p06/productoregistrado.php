@@ -26,7 +26,7 @@
 			<li><strong>Detalles:</strong> <em><?php echo $_POST['detalles']; ?></em></li>
 			<li><strong>Unidades:</strong> <em><?php echo $_POST['unidades']; ?></em></li>
 			<li><strong>Direccion de la Img:</strong> <em><?php echo $_POST['imagen']; ?></em></li>
-
 		</ul>
 	</body>
 </html>
+
