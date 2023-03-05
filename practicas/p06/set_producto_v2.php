@@ -36,6 +36,10 @@
 			<li><strong>Direccion de la Img:</strong> <em><?php echo $_POST['imagen']; ?></em></li>
 		</ul>
 
+		
+
+
+
 <?php
 $nombre = $_POST['nombre'];
 $marca  = $_POST['marca']; 
@@ -61,16 +65,41 @@ if ($link->connect_errno)
     /** NOTA: con @ se suprime el Warning para gestionar el error por medio de código */
 }
 
-/** Crear una tabla que no devuelve un conjunto de resultados */
-$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '{$eliminado}')";
-if ( $link->query($sql) ) 
-{
-    echo 'Producto insertado con ID: '.$link->insert_id;
+if($auxregistros = $link->query("SELECT COUNT(nombre) FROM productos WHERE marca = '$marca' and modelo = '$modelo'")){
+	$row = $auxregistros->fetch_all(MYSQLI_ASSOC);
+	/** útil para liberar memoria asociada a un resultado con demasiada información */
+	foreach ($row as $num => $registro) {            // Se recorren tuplas
+		foreach ($registro as $key => $value) {      // Se recorren campos
+			$data[$num][$key] = $value;
+		}
+	}
+	$auxregistros->free();
 }
-else
-{
-	echo 'El Producto no pudo ser insertado =(';
+
+foreach ($data as $key => $value){
+	$aux2 =  $value["COUNT(nombre)"];
 }
+
+
+
+if ($aux2 >= 1) {
+	
+	$link->query("UPDATE productos SET unidades = unidades + $unidades WHERE marca = '$marca' and modelo = '$modelo'");
+	echo 'Se actualizaron las unidades';
+
+}else{
+	$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '{$eliminado}')";
+	if ( $link->query($sql) ) 
+	{
+		echo 'Producto insertado con ID: '.$link->insert_id;
+	}
+	else
+	{
+		echo 'El Producto no pudo ser insertado =(';
+	}
+}
+
+
 
 $link->close();
 
