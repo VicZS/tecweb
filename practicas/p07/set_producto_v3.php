@@ -24,6 +24,8 @@
 		</style>
 	</head>
 	<body>
+
+
 		<h1>Producto</h1>
 		<h2>Acerca del producto:</h2>
 		<ul>
@@ -107,7 +109,7 @@ $link->close();
 <br/>
 <br/>
 <br/>
-<a href="http://localhost:8080/tecweb/practicas/p06/formulario_productos.html">Regresar</a>
+<a href="http://localhost:8080/tecweb/practicas/p07/formulario_productos.html">Regresar</a>
 
 
 </body>
