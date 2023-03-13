@@ -4,6 +4,8 @@
     <h2>Formulario para Registrar Productos</h2>
 
     <form action="http://localhost:8080/tecweb/practicas/p07/update_producto.php" method="post" id="form">
+        <label for="id">ID:</label><input type="text" name="id" value="<?=$_GET['id']?>" readonly>
+        <br/>
         <label for="nombre">Nombre del Producto</label>
         <input type="text" id="nombre" name="nombre" maxlength="100" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>">
         <br/>
@@ -34,6 +36,12 @@
         <br/>
         <label for="imagen">Direccion de la imagen</label>
         <input type="text" id="imagen" placeholder="img/ejemplo.png" name="imagen" value="<?= !empty($_POST['imagen'])?$_POST['imagen']:$_GET['imagen'] ?>">
+        <br/>
+        <label for="eliminar">Eliminar</label>
+        <select name = "eliminar" id = "eliminar">
+            <option value = "1">SI</option>
+            <option value = "0">NO</option>
+        </select>
         <br/>
         <input type="submit">
         <input type="reset">

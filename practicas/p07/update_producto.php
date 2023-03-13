@@ -29,6 +29,7 @@
 		<h1>Producto</h1>
 		<h2>Acerca del producto:</h2>
 		<ul>
+            <li><strong>Id:</strong> <em><?php echo $_POST['id']; ?></em></li>
 			<li><strong>Nombre:</strong> <em><?php echo $_POST['nombre']; ?></em></li>
 			<li><strong>Marca:</strong> <em><?php echo $_POST['marca']; ?></em></li>
 			<li><strong>Modelo:</strong> <em><?php echo $_POST['modelo']; ?></em></li>
@@ -36,13 +37,13 @@
 			<li><strong>Detalles:</strong> <em><?php echo $_POST['detalles']; ?></em></li>
 			<li><strong>Unidades:</strong> <em><?php echo $_POST['unidades']; ?></em></li>
 			<li><strong>Direccion de la Img:</strong> <em><?php echo $_POST['imagen']; ?></em></li>
+            <li><strong>Eliminar (1=si, 0=no):</strong> <em><?php echo $_POST['eliminar']; ?></em></li>
 		</ul>
-
-		
-
 
 
 <?php
+$id= $_POST['id'];
+
 $nombre = $_POST['nombre'];
 $marca  = $_POST['marca']; 
 $modelo = $_POST['modelo'];
@@ -54,7 +55,7 @@ $unidades = $_POST['unidades'];
 settype($unidades,"int");
 
 $imagen= $_POST['imagen'];
-$eliminado = 0;
+$eliminado = $_POST['eliminar'];
 
 
 /** SE CREA EL OBJETO DE CONEXION */
@@ -67,50 +68,13 @@ if ($link->connect_errno)
     /** NOTA: con @ se suprime el Warning para gestionar el error por medio de código */
 }
 
-if($auxregistros = $link->query("SELECT COUNT(nombre) FROM productos WHERE marca = '$marca' and modelo = '$modelo'")){
-	$row = $auxregistros->fetch_all(MYSQLI_ASSOC);
-	/** útil para liberar memoria asociada a un resultado con demasiada información */
-	foreach ($row as $num => $registro) {            // Se recorren tuplas
-		foreach ($registro as $key => $value) {      // Se recorren campos
-			$data[$num][$key] = $value;
-		}
-	}
-	$auxregistros->free();
-}
-
-foreach ($data as $key => $value){
-	$aux2 =  $value["COUNT(nombre)"];
-}
-
-
-
-if ($aux2 >= 1) {
-	
-	$link->query("UPDATE productos SET unidades = unidades + $unidades WHERE marca = '$marca' and modelo = '$modelo'");
-	echo 'Se actualizaron las unidades';
-
-}else{
-	$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '{$eliminado}')";
-	if ( $link->query($sql) ) 
-	{
-		echo 'Producto insertado con ID: '.$link->insert_id;
-	}
-	else
-	{
-		echo 'El Producto no pudo ser insertado =(';
-	}
-}
-
+	$link->query("UPDATE productos SET nombre = '$nombre', marca = '$marca', modelo = '$modelo', precio = $precio, detalles = '$detalles', unidades = $unidades, imagen = '$imagen', eliminado = $eliminado WHERE id = $id");
+	echo 'Se actualizaron los datos';
 
 
 $link->close();
 
 ?>
-<br/>
-<br/>
-<br/>
-<a href="http://localhost:8080/tecweb/practicas/p07/formulario_productos.html">Regresar</a>
-
 
 </body>
 </html>
