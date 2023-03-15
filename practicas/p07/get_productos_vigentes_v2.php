@@ -62,7 +62,7 @@ if (!empty($tope)) {
                 alert("Se editara el siguiente producto:\nid:"+id +"\nnombre: "+ nombre + "\nmarca: "+marca+ "\nmodelo: "+modelo);
 
 				var url = "formulario_productos_v2.php";
-                window.open(url+"?id="+id+"&nombre="+nombre+"&marca"+marca+"&modelo="+modelo+"&precio="+precio+"&unidades="+unidades+"&detalles="+detalles+"&imagen="+imagen);
+                window.open(url+"?id="+id+"&nombre="+nombre+"&marca="+marca+"&modelo="+modelo+"&precio="+precio+"&unidades="+unidades+"&detalles="+detalles+"&imagen="+imagen);
 				
             }
         </script>

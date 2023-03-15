@@ -10,7 +10,134 @@
         <input type="text" id="nombre" name="nombre" maxlength="100" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>">
         <br/>
         <label for="marca">Marca</label>
-        <select id="marca" name="marca" value="<?= !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'] ?>">
+
+        <?php
+        $aux = !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'];
+
+        switch($aux){
+            case ' Apple':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple" selected >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' Samsung':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung" selected>Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' Hyperx':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx" selected>Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' OCELOT':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT" selected>OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' Sony':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony" selected>Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' JBL':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL" selected>JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case ' SoundPEATS':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple"  >Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS" selected>SoundPEATS</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            default:{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Apple">Apple</option>';
+                echo '<option value="Samsung">Samsung</option>';
+                echo '<option value="Hyperx">Hyperx</option>';
+                echo '<option value="OCELOT">OCELOT</option>';
+                echo '<option value="Sony">Sony</option>';
+                echo '<option value="JBL">JBL</option>';
+                echo '<option value="SoundPEATS">SoundPEATS</option>';
+                echo '</select>';
+            }
+
+        }
+
+        ?>
+        
+        <!-- select id="marca" name="marca" value=" !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'] ">
             <option value="" id="marca">---</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
@@ -18,9 +145,10 @@
             <option value="OCELOT">OCELOT</option>
             <option value="Sony">Sony</option>
             <option value="JBL">JBL</option>
-            <option value="SoundPEATS">SoundPEATS</option>
-        </select>
+            <option value="SoundPEATS" selected>SoundPEATS</option>
+        </select -->
         <br/>
+
         <label for="modelo">Modelo</label>
         <input type="text" id="modelo" name="modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>">
         <br/>
