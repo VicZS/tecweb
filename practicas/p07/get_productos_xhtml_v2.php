@@ -54,20 +54,24 @@ if (!empty($tope)) {
                 y que pertenecen a la clase "row-data".
                 */
 
-                var id = data[0].innerHTML;
-                var nombre = data[1].innerHTML;
-                var marca = data[2].innerHTML;
-                var modelo = data[3].innerHTML;
-                var precio = +data[4].innerHTML;
-                var unidades = +data[5].innerHTML;
-                var detalles = data[6].innerHTML;
-                var imagen = data[7].firstChild.getAttribute('src');
+                var id =+data[0].innerHTML;
+                var nombre =data[1].innerHTML;
+				nombre = nombre.trim();
+                var marca =data[2].innerHTML;
+				marca=marca.trim();
+                var modelo =data[3].innerHTML;
+				modelo=modelo.trim();
+                var precio =+data[4].innerHTML;
+                var unidades =+data[5].innerHTML;
+                var detalles =data[6].innerHTML;
+				detalles=detalles.trim();
+                var imagen =data[7].firstChild.getAttribute('src');
 
                 alert("Se editara el siguiente producto:\nid:"+id +"\nnombre: "+ nombre + "\nmarca: "+marca+ "\nmodelo: "+modelo);
 
 				var url = "formulario_productos_v2.php";
-                window.open(url+"?id="+id+"&nombre="+nombre+"&marca"+marca+"&modelo="+modelo+"&precio="+precio+"&unidades="+unidades+"&detalles="+detalles+"&imagen="+imagen);
-				
+                window.open(url+"?id="+id+"&nombre="+nombre+"&marca="+marca+"&modelo="+modelo+"&precio="+precio+"&unidades="+unidades+"&detalles="+detalles+"&imagen="+imagen);
+			
             }
         </script>
 
@@ -93,79 +97,26 @@ if (!empty($tope)) {
 				</tr>
 			</thead>
 			<tbody>
-				<?php
+			<?php
 
-				foreach ($data as $key => $value) {
-					echo '<tr id='.$value["id"].'>';
-					echo '<th scope="row" class="row-data"> ' . $value["id"] . ' </th>';
-					echo '<td class="row-data"> ' . $value["nombre"] . '</td>';
-					echo '<td class="row-data"> ' . $value["marca"] . '</td>';
-					echo '<td class="row-data"> ' . $value["modelo"] . '</td>';
-					echo '<td class="row-data"> ' . $value["precio"] . '</td>';
-					echo '<td class="row-data"> ' . $value["unidades"] . '</td>';
-					echo '<td class="row-data"> ' . $value['detalles'] . '</td>';
-					echo '<td class="row-data"><img src=' . $value['imagen'] . ' width="200px" height="200px" /></td>';
-					echo '<td><input type="button" value="Editar" onclick="show()" /></td>';
-					echo '</tr>';
-				}
-				?>
+			foreach ($data as $key => $value) {
+				echo '<tr id='.$value["id"].'>';
+				echo '<th scope="row" class="row-data"> '.$value["id"].' </th>';
+				echo '<td class="row-data"> '.$value["nombre"].'</td>';
+				echo '<td class="row-data"> '.$value["marca"].'</td>';
+				echo '<td class="row-data"> '.$value["modelo"].'</td>';
+				echo '<td class="row-data"> '.$value["precio"].'</td>';
+				echo '<td class="row-data"> '.$value["unidades"].'</td>';
+				echo '<td class="row-data"> '.$value['detalles'].'</td>';
+				echo '<td class="row-data"><img src='.$value['imagen'].' width="200px" height="200px" /></td>';
+				echo '<td><input type="button" value="Editar" onclick="show()" /></td>';
+				echo '</tr>';
+			}
+			?>
 
 			</tbody>
 		</table>
 	<?php endif; ?>
-
-	<script>
-            function send2form(nombre, marca, modelo, precio, unidades, detalles, imagen) {
-                var form = document.createElement("form");
-
-                var nombreIn = document.createElement("input");
-                nombreIn.type = 'text';
-                nombreIn.name = 'nombre';
-                nombreIn.value = nombre;
-                form.appendChild(nombreIn);
-
-				/* ---Preguntar como hacer que jale esto---
-                var marcaIn = document.createElement("select");
-                marcaIn.name="marca";
-				marcaoIn.type='option';
-                marcaoIn.value = marca;
-                form.appendChild(marcaIn);
-				*/
-
-				var modeloIn = document.createElement("input");
-                modeloIn.type = 'text';
-                modeloIn.name = 'modelo';
-                modeloIn.value = modelo;
-                form.appendChild(modeloIn);
-
-				var precioIn = document.createElement("input");
-                precioIn.type = 'number';
-                precioIn.name = 'precio';
-                precioIn.value = precio;
-                form.appendChild(precioIn);
-
-				var unidadesIn = document.createElement("input");
-                unidadesIn.type = 'number';
-                unidadesIn.name = 'unidades';
-                unidadesIn.value = unidades;
-                form.appendChild(unidadesIn);
-
-				var detallesIn = document.createElement("textarea");
-                
-                detallesIn.name = 'detalles';
-                detallesIn.value = detalles;
-                form.appendChild(detallesIn);
-				
-
-                console.log(form);
-
-                form.method = 'POST';
-                form.action = 'http://localhost:8080/tecweb/practicas/p07/formulario_productos_v2.php';  
-
-                document.body.appendChild(form);
-                form.submit();
-            }
-        </script>
 
 </body>
 

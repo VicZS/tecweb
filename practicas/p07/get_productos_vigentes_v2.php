@@ -50,16 +50,20 @@ if (!empty($tope)) {
                 y que pertenecen a la clase "row-data".
                 */
 
-                var id = data[0].innerHTML;
-                var nombre = data[1].innerHTML;
-                var marca = data[2].innerHTML;
-                var modelo = data[3].innerHTML;
-                var precio = +data[4].innerHTML;
-                var unidades = +data[5].innerHTML;
-                var detalles = data[6].innerHTML;
-                var imagen = data[7].firstChild.getAttribute('src');
+                var id =+data[0].innerHTML;
+                var nombre =data[1].innerHTML;
+				nombre = nombre.trim();
+                var marca =data[2].innerHTML;
+				marca=marca.trim();
+                var modelo =data[3].innerHTML;
+				modelo=modelo.trim();
+                var precio =+data[4].innerHTML;
+                var unidades =+data[5].innerHTML;
+                var detalles =data[6].innerHTML;
+				detalles=detalles.trim();
+                var imagen =data[7].firstChild.getAttribute('src');
 
-                alert("Se editara el siguiente producto:\nid:"+id +"\nnombre: "+ nombre + "\nmarca: "+marca+ "\nmodelo: "+modelo);
+                alert("Se editara el siguiente producto:\nid:--"+id+"--\nnombre: "+nombre+ "\nmarca: "+marca+ "\nmodelo: "+modelo);
 
 				var url = "formulario_productos_v2.php";
                 window.open(url+"?id="+id+"&nombre="+nombre+"&marca="+marca+"&modelo="+modelo+"&precio="+precio+"&unidades="+unidades+"&detalles="+detalles+"&imagen="+imagen);
@@ -92,14 +96,14 @@ if (!empty($tope)) {
 
 				foreach ($data as $key => $value) {
 					echo '<tr id='.$value["id"].'>';
-					echo '<th scope="row" class="row-data"> ' . $value["id"] . ' </th>';
-					echo '<td class="row-data"> ' . $value["nombre"] . '</td>';
-					echo '<td class="row-data"> ' . $value["marca"] . '</td>';
-					echo '<td class="row-data"> ' . $value["modelo"] . '</td>';
-					echo '<td class="row-data"> ' . $value["precio"] . '</td>';
-					echo '<td class="row-data"> ' . $value["unidades"] . '</td>';
-					echo '<td class="row-data"> ' . $value['detalles'] . '</td>';
-					echo '<td class="row-data"><img src=' . $value['imagen'] . ' width="200px" height="200px" /></td>';
+					echo '<th scope="row" class="row-data"> '.$value["id"].' </th>';
+					echo '<td class="row-data"> '.$value["nombre"].'</td>';
+					echo '<td class="row-data"> '.$value["marca"].'</td>';
+					echo '<td class="row-data"> '.$value["modelo"].'</td>';
+					echo '<td class="row-data"> '.$value["precio"].'</td>';
+					echo '<td class="row-data"> '.$value["unidades"].'</td>';
+					echo '<td class="row-data"> '.$value['detalles'].'</td>';
+					echo '<td class="row-data"><img src='.$value['imagen'].' width="200px" height="200px" /></td>';
 					echo '<td><input type="button" value="Editar" onclick="show()" /></td>';
 					echo '</tr>';
 				}

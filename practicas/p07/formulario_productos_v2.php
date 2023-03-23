@@ -15,7 +15,7 @@
         $aux = !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'];
 
         switch($aux){
-            case ' Apple':{
+            case 'Apple':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple" selected >Apple</option>';
@@ -30,7 +30,7 @@
                 break;
             }
 
-            case ' Samsung':{
+            case 'Samsung':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -45,7 +45,7 @@
                 break;
             }
 
-            case ' Hyperx':{
+            case 'Hyperx':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -60,7 +60,7 @@
                 break;
             }
 
-            case ' OCELOT':{
+            case 'OCELOT':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -75,7 +75,7 @@
                 break;
             }
 
-            case ' Sony':{
+            case 'Sony':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -90,7 +90,7 @@
                 break;
             }
 
-            case ' JBL':{
+            case 'JBL':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -105,7 +105,7 @@
                 break;
             }
 
-            case ' SoundPEATS':{
+            case 'SoundPEATS':{
                 echo '<select id="marca" name="marca">';
                 echo '<option value="">---</option>';
                 echo '<option value="Apple"  >Apple</option>';
@@ -168,7 +168,7 @@
         <label for="eliminar">Eliminar</label>
         <select name = "eliminar" id = "eliminar">
             <option value = "1">SI</option>
-            <option value = "0">NO</option>
+            <option value = "0" selected >NO</option>
         </select>
         <br/>
         <input type="submit">
