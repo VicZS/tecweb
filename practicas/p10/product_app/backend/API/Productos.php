@@ -1,6 +1,6 @@
 <?php
 
-require_once 'API/DataBase.php';
+require_once 'API/database.php';
 
 class Productos extends DataBase{
     private $response;
@@ -15,25 +15,26 @@ class Productos extends DataBase{
             'status'  => 'Error',
             'message' => 'Ya existe un producto con ese nombre'
         );
+    
+        $data = json_decode($jsonOBJ->data, true);
+    
+        $sql = "SELECT * FROM productos WHERE nombre = '{$data['nombre']}' AND eliminado = 0";
+        $result = $this->conexion->query($sql);
 
-        if(isset($jsonOBJ->nombre)){
-            $sql = "SELECT * FROM productos WHERE nombre = '{$jsonOBJ->nombre} AND eliminado = 0";
-            $result = $this->conexion->query($sql);
-
-            if($result->num_rows == 0){
-                $this->conexion->set_charset("utf8");
-                $sql = "INSERT INTO productos VALUES (null,'{$jsonOBJ->nombre}',{$jsonOBJ->marca}','{$jsonOBJ->modelo}',{$jsonOBJ->precio},'{$jsonOBJ->detalles}',{$jsonOBJ->unidades},'{$jsonOBJ->imagen}',0)";
-                if($this->conexion->query($sql)){
-                    $this->response['status'] = "Exitoso";
-                    $this->response['message'] = "Producto agregado";
-                }else{
-                    $this->response['message'] = "Error, no se ejecuto el query:". mysqli_error($this->conexion);
-                }
+        if($result->num_rows > 0){
+            $this->response['message'] = "Error, ya existe un producto con ese nombre";
+        }else{
+            $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES ('{$data['nombre']}', '{$data['marca']}', '{$data['modelo']}', {$data['precio']}, '{$data['detalles']}', {$data['unidades']}, '{$data['imagen']}')";
+            $this->conexion->set_charset("utf8");
+            if($this->conexion->query($sql)){
+                $this->response['status'] = "Exitoso";
+                $this->response['message'] = "Producto insertado correctamente :D";
+            }else{
+                $this->response['message'] = "Error, no se ejecutó el query:". mysqli_error($this->conexion);
             }
-            $result->free();
             $this->conexion->close();
         }
-
+        //echo json_encode($this->response);
     }
 
     public function delete($id){
@@ -43,10 +44,10 @@ class Productos extends DataBase{
         );
 
         if(isset($id)){
-            $sql="UPDATE productos SET elminado = 1 WHERE id = {$id}";
+            $sql="UPDATE productos SET eliminado = 1 WHERE id = {$id}";
             if($this->conexion->query($sql)){
                 $this->response['status'] = "Exitoso";
-                $this->response['message'] = "Producto eliminado correctamente";
+                $this->response['message'] = "Producto eliminado correctamente :D";
             }else{
                 $this->response['message'] = "Error, no se ejecuto el query:". mysqli_error($this->conexion);
             }
@@ -59,18 +60,24 @@ class Productos extends DataBase{
             'status'  => 'Error',
             'message' => 'Fallo la consulta'
         );
-
-        if(isset($jsonOBJ->id)){
-            $sql = "UPDATE produtos SET nombre ='{$jsonOBJ->nombre}', marca ='{$jsonOBJ->marca}', modelo = '{$jsonOBJ->modelo}', precio = {$jsonOBJ->precio}, detalles = '{$jsonOBJ->detalles}', unidades = {$jsonOBJ->unidades}, imagen = '{$jsonOBJ->imagen}' WHERE id = {$jsonOBJ->id}";
+    
+        $data = json_decode($jsonOBJ->data, true);
+        if(isset($data['id'])){
+            $id = $data['id'];
+    
+            $sql = "UPDATE productos SET nombre ='{$data['nombre']}', marca ='{$data['marca']}', modelo = '{$data['modelo']}', precio = {$data['precio']}, detalles = '{$data['detalles']}', unidades = {$data['unidades']}, imagen = '{$data['imagen']}' WHERE id = {$id}";
             $this->conexion->set_charset("utf8");
             if($this->conexion->query($sql)){
                 $this->response['status'] = "Exitoso";
-                $this->response['message'] = "Producto actualizado correctamente";
+                $this->response['message'] = "Producto actualizado correctamente :D";
             }else{
-                $this->response['message'] = "Error, no se ejecuto el query:". mysqli_error($this->conexion);
+                $this->response['message'] = "Error, no se ejecutó el query:". mysqli_error($this->conexion);
             }
             $this->conexion->close();
+        }else{
+            $this->response['message'] = "Error, ID invalido";
         }
+        //echo json_encode($this->response);
     }
 
     public function list(){
@@ -115,7 +122,7 @@ class Productos extends DataBase{
 
     public function single($id){
         if(isset($id)){
-            if($result->$this->conexion->query("SELECT * FROM productos WHERE id={$id}")){
+            if($result=$this->conexion->query("SELECT * FROM productos WHERE id={$id}")){
                 $row = $result->fetch_assoc();
 
                 if(!is_null($row)){
@@ -133,7 +140,7 @@ class Productos extends DataBase{
 
     public function singleByName($name){
         if(isset($name)){
-            if($result->$this->conexion->query("SELECT * FROM productos WHERE nombre = '{$name}'")){
+            if($result=$this->conexion->query("SELECT * FROM productos WHERE nombre = '{$name}'")){
                 $row = $result->fetch_assoc();
 
                 if(!is_null($row)){
