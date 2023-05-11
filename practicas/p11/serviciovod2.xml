@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod.dtd">
+
+<CatalogoVOD>
+    <cuenta correo="lavacalola@email.com">
+        <perfiles>
+            <perfil usuario="Juan" idioma="Es"/>
+            <perfil usuario="Rosa" idioma="En"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Terror">
+                <titulo duracion="2:30hr">It</titulo>
+                <titulo duracion="2:30hr">It 2</titulo>
+            </genero>
+            <genero nombre="Animadas">
+                <titulo duracion="2:40hr">Mario Bros</titulo>
+                <titulo duracion="2:45hr">Mario Bros 2</titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo duracion="1:00 hr">La teoria del big bang</titulo>
+                <titulo duracion="1:00 hr">Como conoci a tu madre</titulo>
+            </genero>
+            <genero nombre="Ciencia Ficcion">
+                <titulo duracion="1:15 hr">Star Wars</titulo>
+                <titulo duracion="1:20 hr">Star Wars 2</titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="spotify_v2.xsd">
+    <Cuenta id="1" plan="normal" fechaIni="2021-10-09" fechaFin="2022-05-01">
+        <Nombre>Juanito</Nombre>
+        <Correo>juanito123@email.com</Correo>
+        <Telefono tipo="movil">222-222-2222</Telefono>
+    </Cuenta>
+</Spotify>
+

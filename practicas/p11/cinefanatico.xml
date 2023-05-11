@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+
+<cinefanatico>
+    <tarjeta noserie="5" visitas="2M" puntos="100">
+        <nombre>The BigBang Teory</nombre>
+        <correo>correo@correo.com</correo>
+        <telefono tipo="casa">2222222222</telefono>
+        <telefono tipo="movil">3333333333</telefono>
+    </tarjeta>
+</cinefanatico>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta>
+        <correo>lavacaloca@mail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Juan</usuario>
+                <idioma>Es</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Rosa</usuario>
+                <idioma>En</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Terror</nombre>
+                <titulo>
+                    <nombre>It</nombre>
+                    <duracion>2:30 hr</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>It 2</nombre>
+                    <duracion>2:40 hr</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Animadas</nombre>
+                <titulo>
+                    <nombre>Mario Bros</nombre>
+                    <duracion>2:45 hr</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Mario Bros 2</nombre>
+                    <duracion>2:50 hr</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>La teoria del big bang</nombre>
+                    <duracion>Mucho</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Como conoci a tu madre</nombre>
+                    <duracion>Mucho x2</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Ciencia ficcion</nombre>
+                <titulo>
+                    <nombre>Star Wars</nombre>
+                    <duracion>mucho</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Star Wars 2</nombre>
+                    <duracion>mucho x2</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>

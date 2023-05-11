@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tw:Spotify xmlns:tw="http://tecnologiasweb.com.mx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://tecnologiasweb.com.mx spotify_ns_v3.xsd">
+    <tw:Cuenta id="1" plan="normal" fechaIni="2021-10-09" fechaFin="2022-05-01">
+        <tw:Nombre>Juanito</tw:Nombre>
+        <tw:Correo>juanito123@email.com</tw:Correo>
+        <tw:Telefono tipo="movil">222-222-2222</tw:Telefono>
+    </tw:Cuenta>
+</tw:Spotify>
